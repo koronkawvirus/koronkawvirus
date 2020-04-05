@@ -36,7 +36,7 @@ module.exports = {
         start_url: `/`,
         background_color: `#f1e9e9`,
         theme_color: `#f1e9e9`,
-        display: `standalone`,
+        display: `minimal-ui`,
         icon: `src/images/koronka_ico.png`, // This path is relative to the root of the site.
       },
     },
