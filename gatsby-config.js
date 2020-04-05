@@ -31,12 +31,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `koronkavirus`,
-        short_name: `koronkavirus`,
+        name: `KoronkaVirus`,
+        short_name: `KoronkaVirus`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
+        background_color: `#f1e9e9`,
+        theme_color: `#f1e9e9`,
+        display: `standalone`,
         icon: `src/images/koronka_ico.png`, // This path is relative to the root of the site.
       },
     },
@@ -86,9 +86,9 @@ module.exports = {
     `gatsby-plugin-sitemap`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-postcss`
+    `gatsby-plugin-postcss`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // 'gatsby-plugin-offline',
+    `gatsby-plugin-offline`
   ],
 }
