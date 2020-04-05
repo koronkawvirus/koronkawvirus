@@ -13,14 +13,9 @@ import SideMenu from "../components/parts/sidemenu"
 
 class Layout extends React.Component {
 
-  constructor(props){
-    super(props);
-  }
-
   render() {
     const { children, pageContext } = this.props;
     const mainColor = pageContext.pageName ? "bg-white" : "bg-lightpurple"
-    console.log(this.props)
     return (
       <>
          <>

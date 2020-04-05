@@ -6,7 +6,6 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
@@ -27,17 +26,15 @@ function SEO({ path, post }) {
     `
   )
   const lang = `pl`
-  console.log(post)
 
 
-  // const metaDescription = post.description || site.siteMetadata.description
   const regex = /(<([^>]+)>)/ig;
-  const metaDescription = post.description && 
-    post.description.replace(regex, '').replace("&nbsp;", '').replace("[&hellip;]", "...")
+  const metaDescription = (post.description && 
+    post.description.replace(regex, '').replace("&nbsp;", '').replace("[&hellip;]", "..."))
     || site.siteMetadata.description
   const titleTemplate = post.pageName ? `%s | ${site.siteMetadata.title}` : `%s`
   const title = post.pageName || site.siteMetadata.title
-  const type = post.pageType == 'post' ? 'article' : 'website'
+  const type = post.pageType === 'post' ? 'article' : 'website'
   const image = post.image ? new URL(post.image, site.siteMetadata.siteUrl) : new URL(site.siteMetadata.sitelogo, site.siteMetadata.siteUrl);
 
   return (

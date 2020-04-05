@@ -67,7 +67,7 @@ exports.createPages = async ({ graphql, actions }) => {
   })  
 
   const postTemplate = path.resolve(`./src/templates/post.js`)
-  posts.forEach(({node}) => {
+  posts.forEach(({node}, i, allPosts) => {
     createPage({
       path: node.slug,
       component: slash(postTemplate),
@@ -76,7 +76,9 @@ exports.createPages = async ({ graphql, actions }) => {
         pageName: node.title,
         description: node.excerpt,
         image: node.featuredImage && node.featuredImage.remoteFile.childImageSharp.fixed.src || false,
-        pageType: "post"
+        pageType: "post",
+        next: i + 1 < allPosts.length ? nextPrevPost(allPosts[i+1]) : null,
+        previous: i > 0 ? nextPrevPost(allPosts[i-1]) : null
       },
     })
   })
@@ -97,4 +99,11 @@ const createPages = (id, createPage, pagesLength, template, pathInitial, pathIte
       },
     })
   })
+}
+
+const nextPrevPost = (post) => {
+  return {
+    slug: post.node.slug,
+    title: post.node.title
+  }
 }

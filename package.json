@@ -28,7 +28,8 @@
     "react-html-parser": "^2.0.2",
     "react-icons": "^3.9.0",
     "react-masonry-component": "^6.2.1",
-    "react-moment": "^0.9.7"
+    "react-moment": "^0.9.7",
+    "react-share": "^4.1.0"
   },
   "devDependencies": {
     "lodash": "^4.17.15",

@@ -29,7 +29,7 @@ class SideClassMenu extends React.Component {
             <div className="flex">
                 <div className="w-4/5">
                 <Link to="/">
-                    <img className="mb-0 lg:h-auto h-24" src={this.props.logo.publicURL} />
+                    <img alt={this.props.site.siteMetadata.title} className="mb-0 lg:h-auto h-24" src={this.props.logo.publicURL} />
                 </Link>
                 </div>
                 <div className="block w-1/5 lg:hidden">
